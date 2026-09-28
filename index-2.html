@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barabani PUC Center – Pollution Check, Insurance, Tax & Paperwork</title>
+<style>
+:root{--bg:#060d1a;--bg2:#0b1830;--green:#2bff88;--orange:#ff8a1f;--text:#e8f1ff;--muted:#93a6c4;--glass:rgba(255,255,255,.07);--edge:rgba(43,255,136,.35)}
+@media (prefers-color-scheme:light){:root{--bg:#eef5ff;--bg2:#dce9fb;--green:#0a9c4f;--orange:#d9600a;--text:#0b1830;--muted:#41567a;--glass:rgba(255,255,255,.65);--edge:rgba(10,156,79,.4)}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:Impact,"Arial Narrow Bold",sans-serif;letter-spacing:.5px;font-weight:400}
+section{padding:90px 6vw;position:relative}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:8px}
+.sub{color:var(--muted);max-width:60ch;margin-bottom:36px}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:18px;backdrop-filter:blur(12px);box-shadow:0 0 22px rgba(43,255,136,.12)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;padding-top:calc(12px + env(safe-area-inset-top,0px));background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--edge)}
+nav b{color:var(--green);font-family:Impact,sans-serif;letter-spacing:1px}
+nav div{display:flex;gap:16px;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;font-size:.9rem}
+nav a:hover{color:var(--orange)}
+@media(max-width:700px){nav div{display:none}}
+.btn{display:inline-block;padding:13px 26px;border-radius:40px;font-weight:700;text-decoration:none;color:#04121f;background:var(--green);box-shadow:0 0 20px var(--green);margin:6px 8px 6px 0;border:0;cursor:pointer;font-size:1rem}
+.btn.o{background:var(--orange);box-shadow:0 0 20px var(--orange)}
+.btn:hover{transform:translateY(-3px) scale(1.04)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-size:26px;text-decoration:none;box-shadow:0 0 24px var(--orange);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 6px var(--orange)}}
+/* HERO */
+#welcome{height:100vh;min-height:560px;padding:0;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at 50% 30%,var(--bg2),var(--bg))}
+#scene{position:absolute;inset:0;width:100%;height:100%}
+.hero-txt{position:relative;z-index:2;padding:0 6vw;pointer-events:none}
+.hero-txt .btns{pointer-events:auto}
+.hero-txt h1{font-size:clamp(2.4rem,8vw,5.6rem);line-height:1.05;text-shadow:0 0 30px rgba(43,255,136,.5);animation:rise 1.2s both}
+.hero-txt h1 span{color:var(--green)}
+.hero-txt p{font-size:clamp(1rem,2.4vw,1.4rem);margin:14px 0 22px;color:var(--orange);animation:rise 1.2s .3s both}
+.hero-txt .btns{animation:rise 1.2s .6s both}
+@keyframes rise{from{opacity:0;transform:translateY(40px) rotateX(40deg)}}
+#cssfallback{display:none;position:absolute;bottom:14%;left:50%;font-size:90px;animation:drive 4s ease-in-out infinite alternate}
+@keyframes drive{from{transform:translateX(-120px)}to{transform:translateX(60px)}}
+/* SERVICES */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;perspective:1000px}
+.card{padding:26px;transform-style:preserve-3d;transition:transform .15s ease-out}
+.card .ic{font-size:2.6rem;transform:translateZ(40px);display:block}
+.card h3{font-size:1.5rem;color:var(--green);margin:8px 0;transform:translateZ(25px)}
+.card ul{padding-left:18px;color:var(--muted);font-size:.93rem}
+.card p{color:var(--muted)}
+/* TIMELINE */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;position:relative}
+.step{padding:22px;text-align:center;opacity:.25;transform:scale(.9);transition:.6s}
+.steps.on .step{opacity:1;transform:none}
+.steps.on .step:nth-child(2){transition-delay:.4s}.steps.on .step:nth-child(3){transition-delay:.8s}.steps.on .step:nth-child(4){transition-delay:1.2s}
+.step i{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 10px;border-radius:50%;background:var(--orange);color:#04121f;font-style:normal;font-weight:700;font-size:1.3rem}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center}
+.stat{padding:28px}
+.stat b{display:block;font:2.8rem Impact,sans-serif;color:var(--green)}
+/* RULES */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;perspective:900px}
+.flip{height:190px;cursor:pointer;position:relative;transform-style:preserve-3d;transition:transform .7s}
+.flip:hover,.flip.f{transform:rotateY(180deg)}
+.flip>div{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;border-radius:18px}
+.flip .fr{border:6px solid var(--orange);background:var(--glass);font-family:Impact,sans-serif;font-size:1.05rem}
+.flip .fr em{font-style:normal;font-size:2.4rem}
+.flip .bk{transform:rotateY(180deg);background:var(--green);color:#04121f;font-size:.92rem;font-weight:600}
+/* WIDGET */
+.widget{max-width:460px;margin-top:34px;padding:24px}
+.widget input,.widget select{width:100%;padding:11px;margin:8px 0;border-radius:10px;border:1px solid var(--edge);background:var(--bg2);color:var(--text);font-size:1rem}
+#due{margin-top:10px;font-weight:700;color:var(--green)}
+/* CONTACT */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact .glass{padding:22px}
+.contact h3{color:var(--orange);font-size:1.3rem}
+/* THANKS */
+#thanks{min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,#1b1240 0%,#c2410c 62%,#ff8a1f 78%,#111 78%)}
+#thanks h2{font-size:clamp(2.6rem,9vw,6rem);color:#fff;text-shadow:0 0 30px #ff8a1f}
+#thanks p{color:#ffe7cf;font-size:1.2rem}
+.sun{position:absolute;bottom:22%;left:50%;width:180px;height:180px;margin-left:-90px;border-radius:50%;background:#ffd166;box-shadow:0 0 90px #ffb347}
+.road{position:absolute;bottom:0;left:0;right:0;height:22%;background:repeating-linear-gradient(90deg,transparent 0 60px,#ffd166 60px 100px) center/auto 6px no-repeat,#111}
+.car{position:absolute;bottom:14%;left:-140px;font-size:80px;transform:scaleX(-1);animation:away 9s linear infinite}
+@keyframes away{to{left:110%}}
+.leaf{position:absolute;top:-30px;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.content{position:relative;z-index:2;padding-bottom:20vh}
+.reveal{opacity:0;transform:translateY(40px) scale(.97);transition:.8s}
+.reveal.in{opacity:1;transform:none}
+footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.step{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><b id="navName">BARABANI PUC</b><div><a href="#services">Services</a><a href="#how">Process</a><a href="#why">Why us</a><a href="#rules">Rules</a><a href="#contact">Contact</a></div></nav>
+<a class="fab" id="fab" href="#" aria-label="Call now">📞</a>
+
+<!-- 1. WELCOME -->
+<section id="welcome">
+  <canvas id="scene"></canvas><div id="cssfallback">🚗💨</div>
+  <div class="hero-txt">
+    <h1>Welcome to<br><span id="heroName">Barabani PUC Center</span></h1>
+    <p>Clean Vehicle. Safe Road. Legal Peace of Mind.</p>
+    <div class="btns"><a class="btn" id="callBtn" href="#">📞 Call Now</a><a class="btn o" id="waBtn" href="#">💬 WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- 2. SERVICES -->
+<section id="services">
+  <h2 class="reveal">Our Services</h2><p class="sub reveal">Everything your vehicle needs to stay legal, under one roof.</p>
+  <div class="grid">
+    <div class="glass card reveal"><span class="ic">🌿</span><h3>Pollution Under Control</h3><p>Emission test and PUC certificate for bikes, cars and trucks.</p></div>
+    <div class="glass card reveal"><span class="ic">🛡️</span><h3>Vehicle Insurance</h3><p>New and renewal policies: third-party and comprehensive.</p></div>
+    <div class="glass card reveal"><span class="ic">💳</span><h3>Road Tax & Fees</h3><p>Road tax and government fee payment handled for you.</p></div>
+    <div class="glass card reveal"><span class="ic">📄</span><h3>Vehicle Paperwork</h3><ul><li>RC transfer &amp; renewal</li><li>Fitness certificate &amp; permit</li><li>Driving licence help</li><li>Address change, NOC</li><li>Hypothecation removal</li></ul></div>
+  </div>
+</section>
+
+<!-- 3. HOW IT WORKS -->
+<section id="how">
+  <h2 class="reveal">How It Works</h2><p class="sub reveal">Four simple steps from your vehicle to your certificate.</p>
+  <div class="steps" id="steps">
+    <div class="glass step"><i>1</i><h3>Bring your vehicle</h3><p>Come with your RC.</p></div>
+    <div class="glass step"><i>2</i><h3>Emission test</h3><p>Quick, computerised check.</p></div>
+    <div class="glass step"><i>3</i><h3>Get documents</h3><p>Certificate and papers, same day.</p></div>
+    <div class="glass step"><i>4</i><h3>Ride legally</h3><p>Drive with confidence.</p></div>
+  </div>
+</section>
+
+<!-- 4. WHY -->
+<section id="why">
+  <h2 class="reveal">Why Choose Us</h2><p class="sub reveal">Edit these numbers in the CONFIG block at the top of the script.</p>
+  <div class="stats" id="stats"></div>
+  <div class="glass widget reveal">
+    <h3 style="color:var(--green)">PUC validity reminder</h3>
+    <label for="td" style="color:var(--muted)">Date of your last PUC test</label>
+    <input type="date" id="td">
+    <select id="vt"><option value="6">Regular validity: 6 months</option><option value="12">New vehicle (first year): 12 months</option></select>
+    <div id="due">Enter your test date to see when it's due.</div>
+  </div>
+</section>
+
+<!-- 5. RULES -->
+<section id="rules">
+  <h2 class="reveal">Drive Safe: Road Rules</h2><p class="sub reveal">Hover or tap a sign to read the rule.</p>
+  <div class="rules" id="rulesGrid"></div>
+</section>
+
+<!-- 6. CONTACT -->
+<section id="contact">
+  <h2 class="reveal">Visit Us</h2><p class="sub reveal">Right near Barabani Railway Station.</p>
+  <div class="contact">
+    <div class="glass reveal"><h3>📍 Address</h3><p id="cAddr"></p><a class="btn o" id="mapBtn" href="#" target="_blank" rel="noopener">Open Map</a></div>
+    <div class="glass reveal"><h3>📞 Phone / WhatsApp</h3><p id="cPhone"></p></div>
+    <div class="glass reveal"><h3>🕘 Opening Hours</h3><p id="cHours"></p></div>
+  </div>
+</section>
+
+<!-- 7. THANK YOU -->
+<section id="thanks">
+  <div class="sun"></div><div class="road"></div><div class="car">🚗</div>
+  <div class="content"><h2>Thank You!</h2><p>Visit us again. Drive safe, stay legal.</p></div>
+</section>
+<footer id="foot"></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===== CONFIG: edit your business details here ===== */
+const CONFIG={
+  name:"Barabani Vehicle Pollution Under Control Center",
+  short:"Barabani PUC Center",
+  phone:"+91 00000 00000",
+  whatsapp:"910000000000",            // country code + number, no + or spaces
+  address:"Near Barabani Railway Station, Barabani, West Bengal, India",
+  hours:"Mon–Sat: 9:00 AM – 7:00 PM\nSunday: 10:00 AM – 2:00 PM",
+  mapUrl:"https://www.google.com/maps/search/?api=1&query=Barabani+Railway+Station",
+  stats:[{n:5000,s:"+",t:"Vehicles served"},{n:10,s:"+",t:"Years of service"},{n:100,s:"%",t:"Same-day service"},{n:100,s:"%",t:"Genuine papers"}]
+};
+const RULES=[
+ ["🪖","Wear a helmet","Two-wheeler riders and pillion must wear ISI helmets."],
+ ["💺","Buckle up","Seatbelts save lives — front and rear."],
+ ["🚫","No drink & drive","Never drive after alcohol. It is a serious offence."],
+ ["🚦","Obey signals","Stop at red. Respect signs and lane markings."],
+ ["⚡","Follow speed limits","Slow down near schools, markets and turns."],
+ ["📵","No phone while driving","Pull over safely before calling or texting."],
+ ["🪪","Carry valid documents","Keep DL, RC, insurance and PUC with you."],
+ ["🌿","Keep PUC valid","An expired PUC can mean a fine. Renew on time."],
+ ["↪️","Use indicators","Signal before turning or changing lanes."],
+ ["🚑","Give way to ambulances","Move aside and let emergency vehicles pass."],
+ ["🛵","No triple riding","Two-wheelers carry two people at most."]
+];
+const $=id=>document.getElementById(id);
+/* fill text from CONFIG */
+$("heroName").textContent=CONFIG.short;$("navName").textContent=CONFIG.short.toUpperCase();
+["callBtn","fab"].forEach(i=>$(i).href="tel:"+CONFIG.phone.replace(/\s/g,""));
+$("waBtn").href="https://wa.me/"+CONFIG.whatsapp;
+$("cAddr").textContent=CONFIG.address;$("cPhone").textContent=CONFIG.phone;
+$("cHours").innerHTML=CONFIG.hours.replace(/\n/g,"<br>");$("mapBtn").href=CONFIG.mapUrl;
+$("foot").textContent="© "+new Date().getFullYear()+" "+CONFIG.name;
+/* stats + counters */
+$("stats").innerHTML=CONFIG.stats.map(x=>`<div class="glass stat reveal"><b data-n="${x.n}" data-s="${x.s}">0</b>${x.t}</div>`).join("");
+/* rules */
+$("rulesGrid").innerHTML=RULES.map(r=>`<div class="flip reveal" tabindex="0"><div class="fr"><em>${r[0]}</em>${r[1]}</div><div class="bk">${r[2]}</div></div>`).join("");
+document.querySelectorAll(".flip").forEach(f=>f.onclick=()=>f.classList.toggle("f"));
+/* 3D tilt on cards */
+document.querySelectorAll(".card").forEach(c=>{
+  const mv=e=>{const p=e.touches?e.touches[0]:e,r=c.getBoundingClientRect(),x=(p.clientX-r.left)/r.width-.5,y=(p.clientY-r.top)/r.height-.5;c.style.transform=`rotateY(${x*18}deg) rotateX(${-y*18}deg)`};
+  c.addEventListener("mousemove",mv);c.addEventListener("touchmove",mv,{passive:true});
+  ["mouseleave","touchend"].forEach(t=>c.addEventListener(t,()=>c.style.transform=""));
+});
+/* scroll reveal + counters + timeline */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+  e.target.classList.add("in");
+  const b=e.target.querySelector("[data-n]");
+  if(b){const t=+b.dataset.n,s=b.dataset.s;let v=0;const k=setInterval(()=>{v+=Math.ceil(t/60);if(v>=t){v=t;clearInterval(k)}b.textContent=v.toLocaleString("en-IN")+s},25)}
+  io.unobserve(e.target)}),{threshold:.25});
+document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");o.disconnect()}}),{threshold:.4}).observe($("steps"));
+/* PUC reminder */
+function due(){const v=$("td").value;if(!v)return;const d=new Date(v);d.setMonth(d.getMonth()+ +$("vt").value);
+  const left=Math.ceil((d-new Date())/864e5);
+  $("due").textContent="Next PUC due: "+d.toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"})+(left<0?" (expired "+(-left)+" days ago, renew now!)":" ("+left+" days left)")}
+$("td").onchange=$("vt").onchange=due;
+/* thank-you leaves */
+for(let i=0;i<22;i++){const l=document.createElement("span");l.className="leaf";l.textContent=["🍃","🌿","✨"][i%3];
+  l.style.cssText=`left:${Math.random()*100}%;font-size:${14+Math.random()*16}px;animation-duration:${6+Math.random()*8}s;animation-delay:${-Math.random()*10}s`;$("thanks").appendChild(l)}
+/* ===== 3D HERO (Three.js) ===== */
+(function(){
+  const cv=$("scene");let R;
+  try{if(!window.THREE)throw 0;R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){$("cssfallback").style.display="block";return}
+  const sc=new THREE.Scene();sc.fog=new THREE.Fog(0x060d1a,10,60);
+  const cam=new THREE.PerspectiveCamera(60,1,.1,100);cam.position.set(0,3,8);
+  sc.add(new THREE.AmbientLight(0x88aaff,.7));const dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(5,10,5);sc.add(dl);
+  const M=(c,o)=>new THREE.MeshLambertMaterial(Object.assign({color:c},o));
+  const road=new THREE.Mesh(new THREE.PlaneGeometry(8,120),M(0x111a2b));road.rotation.x=-Math.PI/2;road.position.z=-40;sc.add(road);
+  const dashes=[];for(let i=0;i<20;i++){const d=new THREE.Mesh(new THREE.PlaneGeometry(.2,2),M(0xffd166,{emissive:0x664400}));d.rotation.x=-Math.PI/2;d.position.set(0,.01,-i*5);sc.add(d);dashes.push(d)}
+  const edge=[];[-4,4].forEach(x=>{for(let i=0;i<12;i++){const p=new THREE.Mesh(new THREE.BoxGeometry(.2,1.6,.2),M(0x2bff88,{emissive:0x0a6630}));p.position.set(x*1.15,.8,-i*10);sc.add(p);edge.push(p)}});
+  const car=new THREE.Group();
+  const body=new THREE.Mesh(new THREE.BoxGeometry(1.8,.6,3.4),M(0xff8a1f));body.position.y=.65;
+  const cab=new THREE.Mesh(new THREE.BoxGeometry(1.5,.6,1.7),M(0x9ad8ff));cab.position.set(0,1.2,-.1);
+  car.add(body,cab);
+  [[-.95,1.1],[.95,1.1],[-.95,-1.1],[.95,-1.1]].forEach(p=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,.3,10),M(0x222222));w.rotation.z=Math.PI/2;w.position.set(p[0],.42,p[1]);car.add(w)});
+  car.position.set(0,0,2);sc.add(car);
+  const N=140,pg=new THREE.BufferGeometry(),pos=new Float32Array(N*3);
+  for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*1;pos[i*3+1]=.5+Math.random();pos[i*3+2]=3.5+Math.random()*10}
+  pg.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  const parts=new THREE.Points(pg,new THREE.PointsMaterial({color:0x2bff88,size:.12,transparent:true,opacity:.8}));sc.add(parts);
+  let mx=0,my=0,run=true,t=0;
+  const mv=e=>{const p=e.touches?e.touches[0]:e;mx=p.clientX/innerWidth-.5;my=p.clientY/innerHeight-.5};
+  addEventListener("mousemove",mv);addEventListener("touchmove",mv,{passive:true});
+  function fit(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+  addEventListener("resize",fit);fit();
+  document.addEventListener("visibilitychange",()=>{run=!document.hidden;if(run)loop()});
+  function loop(){if(!run)return;requestAnimationFrame(loop);t+=.016;
+    dashes.forEach(d=>{d.position.z+=.35;if(d.position.z>8)d.position.z-=100});
+    edge.forEach(p=>{p.position.z+=.35;if(p.position.z>8)p.position.z-=120});
+    for(let i=0;i<N;i++){pos[i*3+2]+=.25;pos[i*3+1]+=.004;if(pos[i*3+2]>16){pos[i*3+2]=3.6;pos[i*3+1]=.5+Math.random()}}
+    pg.attributes.position.needsUpdate=true;
+    car.position.y=Math.sin(t*12)*.02;car.rotation.z=mx*-.1;car.position.x=mx*1.2;
+    cam.position.x+=(mx*2-cam.position.x)*.05;cam.position.y+=(3-my*1.5-cam.position.y)*.05;cam.lookAt(0,1,-4);
+    R.render(sc,cam)}
+  loop();
+})();
+/* footer year etc. done */
+$("fab").addEventListener("click",()=>{});
+</script>
+</body>
+</html>
