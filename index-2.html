@@ -4,43 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Barabani PUC Center – Pollution Check, Insurance, Tax & Paperwork</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060d1a;--bg2:#0b1830;--green:#2bff88;--orange:#ff8a1f;--text:#e8f1ff;--muted:#93a6c4;--glass:rgba(255,255,255,.07);--edge:rgba(43,255,136,.35)}
-@media (prefers-color-scheme:light){:root{--bg:#eef5ff;--bg2:#dce9fb;--green:#0a9c4f;--orange:#d9600a;--text:#0b1830;--muted:#41567a;--glass:rgba(255,255,255,.65);--edge:rgba(10,156,79,.4)}}
+:root{--bg:#f2f5f1;--bg2:#e4ece6;--green:#176b50;--orange:#d95736;--text:#182a23;--muted:#5b6e65;--glass:rgba(255,255,255,.88);--edge:rgba(23,107,80,.16)}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
-h1,h2,h3{font-family:Impact,"Arial Narrow Bold",sans-serif;letter-spacing:.5px;font-weight:400}
-section{padding:90px 6vw;position:relative}
-h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:8px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:0;font-weight:600}
+section{padding:clamp(72px,9vw,112px) clamp(22px,7vw,100px);position:relative}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:8px;line-height:1.1}
 .sub{color:var(--muted);max-width:60ch;margin-bottom:36px}
-.glass{background:var(--glass);border:1px solid var(--edge);border-radius:18px;backdrop-filter:blur(12px);box-shadow:0 0 22px rgba(43,255,136,.12)}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;padding-top:calc(12px + env(safe-area-inset-top,0px));background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--edge)}
-nav b{color:var(--green);font-family:Impact,sans-serif;letter-spacing:1px}
-nav div{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:var(--text);text-decoration:none;font-size:.9rem}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:8px;backdrop-filter:blur(12px);box-shadow:0 12px 32px rgba(24,42,35,.06)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;padding-top:calc(12px + env(safe-area-inset-top,0px));background:rgba(250,252,249,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--edge)}
+nav b{color:var(--green);font-family:"Space Grotesk",sans-serif;font-size:1rem}
+nav div{display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:600}
 nav a:hover{color:var(--orange)}
-@media(max-width:700px){nav div{display:none}}
-.btn{display:inline-block;padding:13px 26px;border-radius:40px;font-weight:700;text-decoration:none;color:#04121f;background:var(--green);box-shadow:0 0 20px var(--green);margin:6px 8px 6px 0;border:0;cursor:pointer;font-size:1rem}
-.btn.o{background:var(--orange);box-shadow:0 0 20px var(--orange)}
-.btn:hover{transform:translateY(-3px) scale(1.04)}
-.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-size:26px;text-decoration:none;box-shadow:0 0 24px var(--orange);animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 6px var(--orange)}}
+@media(max-width:700px){html{scroll-padding-top:106px}nav{display:block;padding:8px 5vw 10px}nav b{display:block;margin-bottom:5px}nav div{gap:20px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav div::-webkit-scrollbar{display:none}nav a{white-space:nowrap;font-size:.82rem}}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:700;text-decoration:none;color:#fff;background:var(--green);margin:6px 8px 6px 0;border:1px solid var(--green);cursor:pointer;font-size:.96rem;transition:transform .2s,background .2s}
+.btn.o{background:var(--orange);border-color:var(--orange)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:56px;height:56px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-size:25px;text-decoration:none;box-shadow:0 8px 24px rgba(217,87,54,.32);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 4px 14px rgba(217,87,54,.16)}}
 /* HERO */
-#welcome{height:100vh;min-height:560px;padding:0;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at 50% 30%,var(--bg2),var(--bg))}
+#welcome{height:100svh;min-height:600px;padding:0;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 52% 110%,rgba(217,87,54,.5),transparent 45%),linear-gradient(145deg,#153a2e,#10271f 68%,#192d25);color:#f7fbf7}
 #scene{position:absolute;inset:0;width:100%;height:100%}
 .hero-txt{position:relative;z-index:2;padding:0 6vw;pointer-events:none}
 .hero-txt .btns{pointer-events:auto}
-.hero-txt h1{font-size:clamp(2.4rem,8vw,5.6rem);line-height:1.05;text-shadow:0 0 30px rgba(43,255,136,.5);animation:rise 1.2s both}
-.hero-txt h1 span{color:var(--green)}
-.hero-txt p{font-size:clamp(1rem,2.4vw,1.4rem);margin:14px 0 22px;color:var(--orange);animation:rise 1.2s .3s both}
+.hero-txt h1{font-size:clamp(2.8rem,8vw,6rem);line-height:1.02;text-shadow:0 8px 32px rgba(0,0,0,.25);animation:rise 1.2s both}
+.hero-txt h1 span{color:#a8e0b9}
+.hero-txt p{font-size:1.12rem;margin:18px 0 24px;color:#d4e5d9;animation:rise 1.2s .3s both}
 .hero-txt .btns{animation:rise 1.2s .6s both}
 @keyframes rise{from{opacity:0;transform:translateY(40px) rotateX(40deg)}}
 #cssfallback{display:none;position:absolute;bottom:14%;left:50%;font-size:90px;animation:drive 4s ease-in-out infinite alternate}
 @keyframes drive{from{transform:translateX(-120px)}to{transform:translateX(60px)}}
 /* SERVICES */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;perspective:1000px}
-.card{padding:26px;transform-style:preserve-3d;transition:transform .15s ease-out}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;perspective:1000px}
+.card{padding:26px;transform-style:preserve-3d;transition:transform .15s ease-out,border-color .2s}
+.card:hover{border-color:rgba(23,107,80,.38)}
 .card .ic{font-size:2.6rem;transform:translateZ(40px);display:block}
 .card h3{font-size:1.5rem;color:var(--green);margin:8px 0;transform:translateZ(25px)}
 .card ul{padding-left:18px;color:var(--muted);font-size:.93rem}
@@ -68,12 +71,15 @@ nav a:hover{color:var(--orange)}
 .widget input,.widget select{width:100%;padding:11px;margin:8px 0;border-radius:10px;border:1px solid var(--edge);background:var(--bg2);color:var(--text);font-size:1rem}
 #due{margin-top:10px;font-weight:700;color:var(--green)}
 /* CONTACT */
-.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .contact .glass{padding:22px}
 .contact h3{color:var(--orange);font-size:1.3rem}
+.contact-actions{margin-top:12px}
+#services,#why,#contact{background:#fff}
+#how,#rules{background:var(--bg)}
 /* THANKS */
-#thanks{min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,#1b1240 0%,#c2410c 62%,#ff8a1f 78%,#111 78%)}
-#thanks h2{font-size:clamp(2.6rem,9vw,6rem);color:#fff;text-shadow:0 0 30px #ff8a1f}
+#thanks{min-height:76vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(180deg,#193b30 0%,#276448 62%,#d95736 78%,#17241e 78%)}
+#thanks h2{font-size:clamp(2.6rem,9vw,6rem);color:#fff;text-shadow:0 0 30px rgba(217,87,54,.6)}
 #thanks p{color:#ffe7cf;font-size:1.2rem}
 .sun{position:absolute;bottom:22%;left:50%;width:180px;height:180px;margin-left:-90px;border-radius:50%;background:#ffd166;box-shadow:0 0 90px #ffb347}
 .road{position:absolute;bottom:0;left:0;right:0;height:22%;background:repeating-linear-gradient(90deg,transparent 0 60px,#ffd166 60px 100px) center/auto 6px no-repeat,#111}
@@ -84,20 +90,21 @@ nav a:hover{color:var(--orange)}
 .content{position:relative;z-index:2;padding-bottom:20vh}
 .reveal{opacity:0;transform:translateY(40px) scale(.97);transition:.8s}
 .reveal.in{opacity:1;transform:none}
-footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem}
+footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem;background:#17241e}
+@media(max-width:520px){.hero-txt{padding:0 22px}.hero-txt p{max-width:34ch;margin:16px auto 22px}.btn{padding:12px 16px}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:20px 12px}.stat b{font-size:2.25rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.step{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<nav><b id="navName">BARABANI PUC</b><div><a href="#services">Services</a><a href="#how">Process</a><a href="#why">Why us</a><a href="#rules">Rules</a><a href="#contact">Contact</a></div></nav>
+<nav aria-label="Main navigation"><b id="navName">BARABANI PUC</b><div><a href="#services">Services</a><a href="#how">Process</a><a href="#why">Why us</a><a href="#rules">Rules</a><a href="#contact">Contact</a></div></nav>
 <a class="fab" id="fab" href="#" aria-label="Call now">📞</a>
 
 <!-- 1. WELCOME -->
 <section id="welcome">
   <canvas id="scene"></canvas><div id="cssfallback">🚗💨</div>
   <div class="hero-txt">
-    <h1>Welcome to<br><span id="heroName">Barabani PUC Center</span></h1>
-    <p>Clean Vehicle. Safe Road. Legal Peace of Mind.</p>
+    <h1><span id="heroName">Barabani PUC Center</span></h1>
+    <p>PUC checks, insurance and vehicle paperwork, all in one place.</p>
     <div class="btns"><a class="btn" id="callBtn" href="#">📞 Call Now</a><a class="btn o" id="waBtn" href="#">💬 WhatsApp</a></div>
   </div>
 </section>
@@ -126,7 +133,7 @@ footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem}
 
 <!-- 4. WHY -->
 <section id="why">
-  <h2 class="reveal">Why Choose Us</h2><p class="sub reveal">Edit these numbers in the CONFIG block at the top of the script.</p>
+  <h2 class="reveal">Why Choose Us</h2><p class="sub reveal">Clear guidance, dependable service and help with the documents that keep you moving.</p>
   <div class="stats" id="stats"></div>
   <div class="glass widget reveal">
     <h3 style="color:var(--green)">PUC validity reminder</h3>
@@ -148,7 +155,7 @@ footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem}
   <h2 class="reveal">Visit Us</h2><p class="sub reveal">Right near Barabani Railway Station.</p>
   <div class="contact">
     <div class="glass reveal"><h3>📍 Address</h3><p id="cAddr"></p><a class="btn o" id="mapBtn" href="#" target="_blank" rel="noopener">Open Map</a></div>
-    <div class="glass reveal"><h3>📞 Phone / WhatsApp</h3><p id="cPhone"></p></div>
+    <div class="glass reveal"><h3>📞 Phone / WhatsApp</h3><p id="cPhone"></p><div class="contact-actions"><a class="btn" id="cCall" href="#">Call</a><a class="btn o" id="cWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a></div></div>
     <div class="glass reveal"><h3>🕘 Opening Hours</h3><p id="cHours"></p></div>
   </div>
 </section>
@@ -166,8 +173,8 @@ footer{padding:20px;text-align:center;color:var(--muted);font-size:.85rem}
 const CONFIG={
   name:"Barabani Vehicle Pollution Under Control Center",
   short:"Barabani PUC Center",
-  phone:"+91 00000 00000",
-  whatsapp:"910000000000",            // country code + number, no + or spaces
+  phone:"+91 93398 55822",
+  whatsapp:"919339855822",            // country code + number, no + or spaces
   address:"Near Barabani Railway Station, Barabani, West Bengal, India",
   hours:"Mon–Sat: 9:00 AM – 7:00 PM\nSunday: 10:00 AM – 2:00 PM",
   mapUrl:"https://www.google.com/maps/search/?api=1&query=Barabani+Railway+Station",
@@ -189,8 +196,10 @@ const RULES=[
 const $=id=>document.getElementById(id);
 /* fill text from CONFIG */
 $("heroName").textContent=CONFIG.short;$("navName").textContent=CONFIG.short.toUpperCase();
-["callBtn","fab"].forEach(i=>$(i).href="tel:"+CONFIG.phone.replace(/\s/g,""));
+const phoneLink="tel:"+CONFIG.phone.replace(/\D/g,"");
+["callBtn","fab","cCall"].forEach(i=>$(i).href=phoneLink);
 $("waBtn").href="https://wa.me/"+CONFIG.whatsapp;
+$("cWhatsapp").href="https://wa.me/"+CONFIG.whatsapp;
 $("cAddr").textContent=CONFIG.address;$("cPhone").textContent=CONFIG.phone;
 $("cHours").innerHTML=CONFIG.hours.replace(/\n/g,"<br>");$("mapBtn").href=CONFIG.mapUrl;
 $("foot").textContent="© "+new Date().getFullYear()+" "+CONFIG.name;
